@@ -8,7 +8,7 @@ Lee detenidamente sus características ya que durante su lectura te proponemos m
 
 Esta aplicación consta del código necesario mínimo para el uso del sistema: batería, conexión y ajustes. Usa este código para no tener que empezar desde cero.  [Ver código](https://github.com/blautic/pikkuAcademy/tree/master/Examples/pikkuAcademyBase/)
 
-<div style="text-align:center"><img src="/images/base.png " width="240"></div>
+<div style="text-align:center"><img src="https://github.com/blautic/pikkuAcademy/raw/master/images/base.png" width="240"></div>
 
 
 - Detectamos dispositivos que mantengan presionado el botón 1 y lo guardamos en la configuración del la Liberia 
@@ -67,7 +67,7 @@ private void updateBatteryIU(int value) {
 Toda la funcionalidad de los Pikkus disponible en la aplicación de Ejemplo de a que podrás extraer bloques de código [Ver codigo](https://github.com/blautic/pikkuAcademy/tree/master/Examples/pikkuAcademyFull/)
 
 
-<div style="text-align:center"><img src="/images/full.gif " width="240" center></div>
+<div style="text-align:center"><img src="https://github.com/blautic/pikkuAcademy/raw/master/images/full.gif" width="240" center></div>
 
 - Obtenemos datos del accelerometro de los ejes x , y, z y los angulos xy, zy, xz
 
@@ -153,7 +153,7 @@ pikkuAcademy.readButtons((nButton, pressedButton, durationMilliseconds) -> {
 
 Aplicación con guía paso a paso para control de pasos, distancia recorrida, pasos, tiempo de pie y en reposo y botón de emergencia [Ver código](https://github.com/blautic/pikkuAcademy/tree/master/Examples/pikkuAcademyActivity/)
 
-<div style="text-align:center"><img src="/images/activity.png " width="240"></div>
+<div style="text-align:center"><img src="https://github.com/blautic/pikkuAcademy/raw/master/images/activity.png" width="240"></div>
 
 
 
@@ -195,7 +195,7 @@ Aplicación con guía paso a paso para convertir el pikku en un joystick inaláb
 
 
 
-<div style="text-align:center"><img src="/images/snake.gif " width="480"></div>
+<div style="text-align:center"><img src="https://github.com/blautic/pikkuAcademy/raw/master/images/snake.gif" width="480"></div>
 
 Utilizando los ángulos del aceleramiento podemos ver la inclinación del dispositivo
 
