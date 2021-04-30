@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">App Base</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="select_device">Select Device</string>
+    <string name="previous">Previous</string>
+
+    <string name="infoConnect">No configured</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="mac">Mac: </string>
+    <string name="name">Name: </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="press_button">Press the PIKKU button to link</string>
+    <string name="save">Save</string>
+    <string name="delete_device">Delete PIKKU</string>
+    <string name="error_chamge_name">Error changing name,check your connection with pikku device</string>
+    <string name="rename_ok">Renamed successfully</string>
+    <string name="invalid_name">Invalid name, check that the length of the name is not longer than 15 characters</string>
+    <string name="enable_bluetooth">Please Enable Bluetooth</string>
+    <string name="enable_gps">Please Enable Gps</string>
+    <string name="change_name">Change name</string>
+    <string name="firmware">firmware</string>
+
+</resources>

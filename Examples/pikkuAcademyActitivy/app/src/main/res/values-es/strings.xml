@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Ajustes</string>
+    <string name="select_device">Seleccione el dispositivo</string>
+    <string name="infoConnect">No configurado</string>
+    <string name="mac">Mac:</string>
+    <string name="name">Nombre:</string>
+    <string name="turn_off_pikku">Apagar dispositivo pikku</string>
+    <string name="press_button">Presione botón del PIKKU para enlazar</string>
+    <string name="save">Guardar</string>
+    <string name="delete_device">Eliminar PIKKU</string>
+    <string name="error_chamge_name">Error al cambiar el nombre, verifique su conexión con el dispositivo pikku</string>
+    <string name="rename_ok">Se cambió el nombre correctamente</string>
+    <string name="invalid_name">Nombre no válido, compruebe que la longitud del nombre no supere los 15 caracteres</string>
+    <string name="enable_bluetooth">Habilitar Bluetooth</string>
+    <string name="enable_gps">Habilitar GPS</string>
+    <string name="error_change_settings">Error al cambiar la configuración, verifique su conexión con el dispositivo pikku</string>
+    <string name="vibration">Vibración</string>
+    <string name="led">Led</string>
+    <string name="accelerometer">Acelerómetro</string>
+    <string name="gyroscope">Giroscopio</string>
+    <string name="proximity_value">Proximidad %d m</string>
+    <string name="inclination">Inclinación</string>
+    <string name="firmware">Firmware:</string>
+    <string name="accelerometer_scale">Escala acelerómetro</string>
+    <string name="gyroscope_scale">Escala giroscopio</string>
+    <string name="transmitting_period">Período de transmisión (ms)</string>
+    <string name="title_activity_sensor_settings">Configuración SOS</string>
+    <string name="connect_device">Conectar dispositivo</string>
+    <string name="name_pikku">Nombre del dispositivo</string>
+    <string name="emergency_number">Número de emergencia</string>
+    <string name="steps">pasos</string>
+    <string name="metres">metros</string>
+    <string name="jumps">saltos</string>
+    <string name="standing">de pie</string>
+    <string name="rest">en reposo</string>
+    <string name="button_sos">Botón SOS</string>
+    <string name="activity">Actividad</string>
+</resources>

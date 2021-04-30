@@ -1,0 +1,27 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="accelerometer_scale_entries">
+        <item>2g</item>
+        <item>4g</item>
+        <item>6g</item>
+        <item>16g</item>
+    </string-array>
+    <string-array name="accelerometer_scale">
+        <item>00</item>
+        <item>08</item>
+        <item>10</item>
+        <item>18</item>
+    </string-array>
+    <string-array name="gyroscope_scale_entries">
+        <item>250dps</item>
+        <item>500dps</item>
+        <item>1000dps</item>
+        <item>2000dps</item>
+    </string-array>
+    <string-array name="gyroscope_scale">
+        <item>00</item>
+        <item>08</item>
+        <item>10</item>
+        <item>18</item>
+    </string-array>
+</resources>

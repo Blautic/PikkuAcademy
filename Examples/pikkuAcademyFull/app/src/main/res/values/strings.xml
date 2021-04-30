@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name" translatable="false">Pikku Academy Full</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="select_device">Select Device</string>
+
+    <string name="infoConnect">No configured</string>
+    <string name="mac">Mac: </string>
+    <string name="name">Name: </string>
+    <string name="name_pikku">Name pikku device </string>
+    <string name="turn_off_pikku">Turn off pikku device </string>
+    <string name="connected">Connected: </string>
+
+
+    <string name="default_acc" translatable="false">08</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="press_button">Press the PIKKU button to link</string>
+    <string name="save">Save</string>
+    <string name="delete_device">Delete PIKKU</string>
+    <string name="error_chamge_name">Error changing name,check your connection with pikku device</string>
+    <string name="rename_ok">Renamed successfully</string>
+    <string name="invalid_name">Invalid name, check that the length of the name is not longer than 15 characters</string>
+    <string name="enable_bluetooth">Please Enable Bluetooth</string>
+    <string name="enable_gps">Please Enable Gps</string>
+    <string name="error_change_settings">Error change Settings, please check your connection with pikku device</string>
+
+    <string name="vibration">Vibration</string>
+    <string name="led">Led</string>
+    <string name="accelerometer">Accelerometer</string>
+    <string name="gyroscope">Gyroscope</string>
+    <string name="proximity_value">Proximity %d m</string>
+    <string name="inclination">Inclination</string>
+    <string name="firmware">Firmware:</string>
+
+    <string name="accelerometer_scale">Accelerometer scale</string>
+    <string name="gyroscope_scale">Gyroscope scale</string>
+    <string name="transmitting_period">Transmitting period (ms)</string>
+    <string name="title_activity_sensor_settings">Sensor Settings</string>
+    <string name="connect_device">Connect Device</string>
+    <string name="indentification">Identification</string>
+    <string name="flashing" translatable="false">Flashing</string>
+    <string name="identification">Identification</string>
+    <string name="group">Group</string>
+    <string name="code">Code</string>
+    <string name="number">Number</string>
+
+</resources>

@@ -1,0 +1,67 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory>
+
+        <EditTextPreference
+            android:key="name_pikku"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/name_pikku" />
+
+        <ListPreference
+            app:entries="@array/accelerometer_scale_entries"
+            app:entryValues="@array/accelerometer_scale"
+            app:summary="%s"
+            app:key="accelerometer_scale"
+            app:title="@string/accelerometer_scale"
+            app:defaultValue="@string/default_acc"
+            app:useSimpleSummaryProvider="true"/>
+
+        <ListPreference
+            app:defaultValue="10"
+            app:summary="%s"
+            app:entries="@array/gyroscope_scale_entries"
+            app:entryValues="@array/gyroscope_scale"
+            app:key="gyroscope_scale"
+            app:title="@string/gyroscope_scale"
+            app:useSimpleSummaryProvider="true"/>
+
+        <EditTextPreference
+            android:digits="0123456789"
+            android:inputType="number"
+            android:key="transmitting_period"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/transmitting_period"
+            app:defaultValue="50" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/identification">
+
+        <EditTextPreference
+            android:digits="0123456789"
+            android:inputType="number"
+            android:key="group"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/group" />
+
+        <EditTextPreference
+            android:digits="0123456789"
+            android:inputType="number"
+            android:key="code"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/code" />
+
+        <EditTextPreference
+            android:digits="0123456789"
+            android:inputType="number"
+            android:key="number"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/number" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

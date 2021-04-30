@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.PikkuAcademyBase.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.PikkuAcademyBase.PopupOverlay">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/name_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        app:srcCompat="@drawable/ic_pikku_name"
+                        tools:viewBindingIgnore="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_settings" />
+
+                <ImageView
+                    android:id="@+id/connect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/settings"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_ble_disconnected" />
+
+                <ImageView
+                    android:id="@+id/battery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/connect"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_battery_0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/connect_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:indicatorColor="@color/pikku_green"
+        tools:visibility="visible" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/connect_progress">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_activity"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:text="@string/activity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/divider_1"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/color_primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/switch_activity" />
+
+
+            <ImageView
+                android:id="@+id/img_pasos"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_pasos"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_1" />
+
+            <TextView
+                android:id="@+id/steps"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="0"
+                android:textColor="@color/pikku_green"
+                app:layout_constraintBottom_toBottomOf="@+id/img_pasos"
+                app:layout_constraintStart_toEndOf="@+id/img_pasos"
+                app:layout_constraintTop_toTopOf="@+id/img_pasos" />
+
+            <TextView
+                android:id="@+id/steps_label"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/steps"
+                app:layout_constraintBottom_toBottomOf="@+id/steps"
+                app:layout_constraintStart_toEndOf="@+id/steps"
+                app:layout_constraintTop_toTopOf="@+id/steps" />
+
+            <ImageView
+                android:id="@+id/img_distance"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_map"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_pasos" />
+
+            <TextView
+                android:id="@+id/distance"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="0"
+                android:textColor="@color/pikku_green"
+                app:layout_constraintBottom_toBottomOf="@+id/img_distance"
+                app:layout_constraintStart_toEndOf="@+id/img_distance"
+                app:layout_constraintTop_toTopOf="@+id/img_distance" />
+
+
+            <TextView
+                android:id="@+id/distance_label"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/metres"
+                app:layout_constraintBottom_toBottomOf="@+id/distance"
+                app:layout_constraintStart_toEndOf="@+id/distance"
+                app:layout_constraintTop_toTopOf="@+id/distance" />
+
+            <ImageView
+                android:id="@+id/img_jumps"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_salto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_distance" />
+
+            <TextView
+                android:id="@+id/jumps"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="0"
+                android:textColor="@color/pikku_green"
+                app:layout_constraintBottom_toBottomOf="@+id/img_jumps"
+                app:layout_constraintStart_toEndOf="@+id/img_jumps"
+                app:layout_constraintTop_toTopOf="@+id/img_jumps" />
+
+            <TextView
+                android:id="@+id/jumps_label"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/jumps"
+                app:layout_constraintBottom_toBottomOf="@+id/jumps"
+                app:layout_constraintStart_toEndOf="@+id/jumps"
+                app:layout_constraintTop_toTopOf="@+id/jumps" />
+
+            <ImageView
+                android:id="@+id/img_stand"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_de_pie"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_jumps" />
+
+            <Chronometer
+                android:id="@+id/stand"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="0"
+                android:textColor="@color/pikku_green"
+                app:layout_constraintBottom_toBottomOf="@+id/img_stand"
+                app:layout_constraintStart_toEndOf="@+id/img_stand"
+                app:layout_constraintTop_toTopOf="@+id/img_stand" />
+
+            <TextView
+                android:id="@+id/stand_label"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/standing"
+                app:layout_constraintBottom_toBottomOf="@+id/stand"
+                app:layout_constraintStart_toEndOf="@+id/stand"
+                app:layout_constraintTop_toTopOf="@+id/stand" />
+
+            <ImageView
+                android:id="@+id/img_rest"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_reposo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_stand" />
+
+
+            <Chronometer
+                android:id="@+id/rest"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="0"
+                android:textColor="@color/pikku_green"
+
+
+                app:layout_constraintBottom_toBottomOf="@+id/img_rest"
+                app:layout_constraintStart_toEndOf="@+id/img_rest"
+                app:layout_constraintTop_toTopOf="@+id/img_rest" />
+
+            <TextView
+                android:id="@+id/rest_label"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/rest"
+                app:layout_constraintBottom_toBottomOf="@+id/rest"
+                app:layout_constraintStart_toEndOf="@+id/rest"
+                app:layout_constraintTop_toTopOf="@+id/rest" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_sos"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:text="@string/button_sos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_rest" />
+
+            <View
+                android:id="@+id/divider_2"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/color_primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/switch_sos" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_pikku_on"
+                android:rotation="180"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_2" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_enable_call"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider_2" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_enable_vibrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/switch_enable_call" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_call"
+                app:layout_constraintBottom_toBottomOf="@+id/switch_enable_call"
+                app:layout_constraintEnd_toStartOf="@+id/switch_enable_call"
+                app:layout_constraintTop_toTopOf="@+id/switch_enable_call" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_vibrate"
+                app:layout_constraintBottom_toBottomOf="@+id/switch_enable_vibrate"
+                app:layout_constraintEnd_toStartOf="@+id/switch_enable_vibrate"
+                app:layout_constraintTop_toTopOf="@+id/switch_enable_vibrate" />
+
+            <TextView
+                android:id="@+id/version"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                tools:text="v0.1m" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

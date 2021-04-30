@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.PikkuAcademyBase.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.PikkuAcademyBase.PopupOverlay">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/name_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        app:srcCompat="@drawable/ic_pikku_name"
+                        tools:viewBindingIgnore="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_settings" />
+
+                <ImageView
+                    android:id="@+id/connect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/settings"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_ble_disconnected" />
+
+                <ImageView
+                    android:id="@+id/battery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/connect"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_battery_0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/connect_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:indicatorColor="@color/pikku_green"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/connect_progress">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_vibration_left"
+                    android:layout_width="12dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_vibration_left"
+                    android:visibility="invisible"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/img_pikku_normal"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="-18dp"
+                    android:layout_marginEnd="-18dp"
+                    android:src="@drawable/ic_pikku_off" />
+
+                <ImageView
+                    android:id="@+id/img_vibration_right"
+                    android:layout_width="12dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_vibration_right"
+                    android:visibility="invisible"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:id="@+id/name"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                tools:text="Pikku name"
+                app:layout_constraintEnd_toEndOf="@+id/switch_vibration"
+                app:layout_constraintStart_toStartOf="@+id/switch_vibration"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_vibration"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:text="@string/vibration"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                app:thumbTint="@color/pikku_red" />
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_led"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:checkedButton="@id/led_on"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                <RadioButton
+                    android:id="@+id/led_off"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="Off"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/led_on"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="On"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/led_flashing"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="@string/flashing"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/button1_time"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="0''"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+                app:layout_constraintTop_toTopOf="@+id/linearLayout3" />
+
+            <TextView
+                android:id="@+id/button2_time"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:text="0''"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/button1_time" />
+
+            <ProgressBar
+                android:id="@+id/proximity_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/progress_bar_state"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                app:trackCornerRadius="15dp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/ic_pikku_settings"
+                app:layout_constraintBottom_toBottomOf="@+id/proximity_bar"
+                app:layout_constraintStart_toStartOf="@+id/proximity_bar"
+                app:layout_constraintTop_toTopOf="@+id/proximity_bar"
+                tools:viewBindingIgnore="true" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_device"
+                app:layout_constraintBottom_toBottomOf="@+id/proximity_bar"
+                app:layout_constraintEnd_toEndOf="@+id/proximity_bar"
+                app:layout_constraintTop_toTopOf="@+id/proximity_bar"
+                tools:viewBindingIgnore="true" />
+
+            <TextView
+                android:id="@+id/proximity_text"
+                style="@style/TextAppearance.MaterialComponents.Headline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/proximity_bar"
+                app:layout_constraintEnd_toEndOf="@+id/proximity_bar"
+                app:layout_constraintStart_toStartOf="@+id/proximity_bar"
+                app:layout_constraintTop_toTopOf="@+id/proximity_bar"
+                tools:text="@string/proximity_value" />
+
+            <com.blautic.pikkuacademyfull.view.SensorLinealChart
+                android:id="@+id/accelerometer_chart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/proximity_bar" />
+
+            <com.blautic.pikkuacademyfull.view.SensorLinealChart
+                android:id="@+id/gyroscope_chart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accelerometer_chart" />
+
+            <TextView
+                android:id="@+id/label_inclination"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:text="@string/inclination"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gyroscope_chart"
+                tools:viewBindingIgnore="true" />
+
+            <LinearLayout
+                android:id="@+id/label_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_inclination"
+                tools:viewBindingIgnore="true">
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="XY"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ZY"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body2"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="XZ"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_container"
+                tools:viewBindingIgnore="true">
+
+                <com.blautic.pikkuacademyfull.view.InclinationView
+                    android:id="@+id/incXY"
+                    android:layout_width="0dip"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="8dp" />
+
+                <com.blautic.pikkuacademyfull.view.InclinationView
+                    android:id="@+id/incZY"
+                    android:layout_width="0dip"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="8dp" />
+
+                <com.blautic.pikkuacademyfull.view.InclinationView
+                    android:id="@+id/incXZ"
+                    android:layout_width="0dip"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:padding="8dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/led"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/radio_group_led"
+                app:layout_constraintStart_toStartOf="@+id/radio_group_led"
+                app:layout_constraintTop_toBottomOf="@+id/switch_vibration" />
+
+            <TextView
+                android:id="@+id/version"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+                tools:text="v0.1m" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

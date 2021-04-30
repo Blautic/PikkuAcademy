@@ -1,0 +1,13 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory>
+
+        <EditTextPreference
+            android:key="sos_number"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            app:useSimpleSummaryProvider="true"
+            android:title="@string/emergency_number" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

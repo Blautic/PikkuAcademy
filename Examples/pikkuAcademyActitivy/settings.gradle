@@ -1,0 +1,2 @@
+rootProject.name = "Pikku Academy Actividad"
+include ':app'

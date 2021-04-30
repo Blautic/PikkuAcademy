@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_primary">#3d3d3d</color>
+    <color name="color_primary_variant">#ff121212</color>
+    <color name="design_default_color_on_primary">#ffffff</color>
+    <color name="design_default_color_secondary">@color/pikku_green</color>
+    <color name="design_default_color_secondary_variant">@color/pikku_green</color>
+    <color name="color_on_secondary">#ffffffff</color>
+    <color name="color_background">#2d2d2d</color>
+    <color name="color_status_bar">#ff27272f</color>
+    <color name="color_delete">#FF6859</color>
+    <color name="pikku_green">#cbca22</color>
+    <color name="pikku_red">#ba4f24</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
+</resources>

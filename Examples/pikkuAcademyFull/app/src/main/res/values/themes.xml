@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.PikkuAcademyBase" parent="Theme.MaterialComponents.DayNight">
+        <!-- Primary brand color. -->
+        <item name="android:colorBackground">@color/color_background</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="colorOnPrimary">@color/pikku_green</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/pikku_green</item>
+        <item name="colorSecondaryVariant">@color/pikku_green</item>
+        <item name="colorOnSecondary">@color/pikku_green</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor">@color/color_primary</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/darker_gray</item>
+        <item name="android:editTextColor">@color/color_primary</item>
+        <!-- Add this -->
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+        <!-- Customize your theme here. -->
+
+    </style>
+
+
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorPrimary">@color/color_background</item>
+
+    </style>
+
+    <style name="Theme.PikkuAcademyBase.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.PikkuAcademyBase.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.PikkuAcademyBase.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
