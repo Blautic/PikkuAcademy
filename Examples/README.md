@@ -13,6 +13,8 @@ Esta aplicación consta del código necesario mínimo para el uso del sistema: d
 
 Tal y como explicábamos en la documentación previa, en la librería existen métodos que te permiten descubrir aquellos PikkuAcademy que se encuentran cerca y que queremos conectar. Es nuestro primer objetivo para poder usar la aplicación.
 
+IMÁGENES DE LOS ICONOS Y CÓMO SE USAN COMBINADO CON EL CÓDIGO.
+
 El siguiente metodo permite detectar aquel dispositivo Pikku cercano que mantenga presionado el botón 1 y guardar en la configuración de la librería su dirección MAC para las siguientes conexiones: 
 
 ```java
@@ -79,11 +81,14 @@ El código de la aplicación visualiza el modo de utilizar la funcionalidad comp
 
 Una de las primeras funciones que debes hacer para desarrollar aplicaciones es dominar el diseño de la interfaz de usuario. En este caso puedes utilizar la nuestra interfaz pero te proponemos que cambies los elementos, formatos y colores para adaptarlos a tus gustos y necesidades. 
 
+EJEMPLOS DE CÓDIGO DEL DATA BINDING
+
 <div style="text-align:center"><img src="https://github.com/blautic/pikkuAcademy/raw/master/images/full.gif" width="240" center></div>
 
 Esta aplicación utiliza la aplicación base explicada anteriormente para gestionar la conexión con el dispositivo. Consulta este apartado si no te queda claro como realizar esta funcionalidad.
 
 EXPLICAR DE ARRIBA A ABAJO DE LA PANTALLA EL USO DE LA LIBRERÍA COMBINADA CON LA PROGRAMACIÓN DE LOS RECURSOS GRÁFICOS UTILIZADOS
+UTILIZAR IMÁGENES DE LA PARTE DE LA PANTALLA BAJO EXPLICACIÓN Y EJEMPLOS DEL DATA BINDING REALIZADO Y DETALLES INTERESANTES DEL CÓDIGO.
 
 Una primera funcionalidad es el uso de los botones inalámbricos que proporciona el Pikku. Podemos pulsar los botones y recibir la información asociada: estado de pulsación del botón 1 y del botón 2 y el tiempo de pulsación en milisegundos. El tiempo de pulsación te permite distinguir entre pulsaciones cortas y largas.
 
@@ -141,9 +146,13 @@ binding.radioGroupLed.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeL
 ```
 
 - RSSI para control de la distancia
-
+CÓDIGO Y USO DEL RECURSO GRÁFICO.
 
 - Obtenemos datos del accelerometro de los ejes x , y, z y los angulos xy, zy, xz
+
+EXPLICAR UNIDADES DE X,Y Y Z....ESCALA DEL ACELERÓMETRO USADA. IDEA DE SITUAR EL DISPOSITIVO EN UNA DETERMINADA POSICIÓN Y QUE PUEDA VER EL EJE CORRESPODIENTE COMO TOMA VALOR DE 1...APOYARLO EN IMÁGEN
+
+ÁNGULOS: EXPLICAR QUE SON ÁNGULOS DEL PLANO DE LOS EJES RESPECTO A LA PERPENDICULAR AL SUELO. PONER EJEMPLOS DE ALGUNOS ÁNGULOS FÁCILES DE IMITAR.
 
 ```java
 pikkuAcademy.readAccelerometer(new AccelerometerCallback() {
@@ -159,6 +168,7 @@ pikkuAcademy.readAccelerometer(new AccelerometerCallback() {
 ```
 
 - Obtenemos datos del gyroscopio de los ejes x , y, z
+EXPLICAR UNIDADES Y PRÁCTICAS PARA VISUALIZAR LOS DIFERENTES EJES.
 
 ```java
 pikkuAcademy.readGyroscope(new GyroscopeCallback() {
