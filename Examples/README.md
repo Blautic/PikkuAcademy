@@ -225,6 +225,16 @@ public void stepDetect(float x, float y, float z) {
 }
 ```
 
+EXPLICAR RESTO DE PARÁMETROS
+PASOS
+SALTOS
+DESCANSO O PIE
+
+
+BOTÓN DE EMERGENCIA...CÓMO FUNCIONA, CÓMO SE HA PROGRAMADO... 
+
+
+
 # Snake Game
 <a href="https://play.google.com/store/apps/details?id=com.blautic.pikkuacademySnake"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="75" ></a>
 
@@ -235,6 +245,8 @@ Aplicación con guía paso a paso para convertir el pikku en un joystick inaláb
 <div style="text-align:center"><img src="https://github.com/blautic/pikkuAcademy/raw/master/images/snake.gif" width="480"></div>
 
 Utilizando los ángulos del aceleramiento podemos ver la inclinación del dispositivo
+
+EXPLICAR CÓMO FUNCIONAN LOS ÁNGULOS. 
 
 ```java
 pikkuAcademy.readAccelerometer(new AccelerometerCallback() {
@@ -265,3 +277,5 @@ pikkuAcademy.readAccelerometer(new AccelerometerCallback() {
     }
 });
 ```
+
+EXPLICAR DETALLES DE LA INTERFAZ GŔAFICA QUE PUEDAN SER INTERESANTES PARA UN ESTUDIANTE.
