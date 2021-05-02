@@ -13,7 +13,7 @@ Esta aplicación consta del código necesario mínimo para el uso del sistema: d
 
 Tal y como explicábamos en la documentación previa, en la librería existen métodos que te permiten descubrir aquellos PikkuAcademy que se encuentran cerca y que queremos conectar. Es nuestro primer objetivo para poder usar la aplicación.
 
-El siguiente permite metodo detectar el dispositivo Pikku cercano que mantenga presionado el botón 1 y guardar en la configuración de la librería su dirección MAC para las siguientes conexiones: 
+El siguiente metodo permite detectar aquel dispositivo Pikku cercano que mantenga presionado el botón 1 y guardar en la configuración de la librería su dirección MAC para las siguientes conexiones: 
 
 ```java
 pikkuAcademy.scan(true, scanInfo -> {
@@ -70,13 +70,78 @@ Con esta aplicación has aprendido lo mínimo que se necesita para empezar a int
 
 
 # Full
+
+Con la aplicación PikkuAcademyFull vas a ver cómo acceder y extraer todos los datos de los dispositivos. Antes de navegar por el código puedes descargarte la APP del Play Store de Google y probar su funcionalidad.
+
 <a href="https://play.google.com/store/apps/details?id=com.blautic.pikkuacademyfull"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="75"></a>
 
+El código de la aplicación visualiza el modo de utilizar la funcionalidad completa del dispositivo. Puedes extraer bloques ejemplo y probar su funcionamiento [Ver codigo](https://github.com/blautic/pikkuAcademy/tree/master/Examples/pikkuAcademyFull/)
 
-Toda la funcionalidad de los Pikkus disponible en la aplicación de Ejemplo de a que podrás extraer bloques de código [Ver codigo](https://github.com/blautic/pikkuAcademy/tree/master/Examples/pikkuAcademyFull/)
-
+Una de las primeras funciones que debes hacer para desarrollar aplicaciones es dominar el diseño de la interfaz de usuario. En este caso puedes utilizar la nuestra interfaz pero te proponemos que cambies los elementos, formatos y colores para adaptarlos a tus gustos y necesidades. 
 
 <div style="text-align:center"><img src="https://github.com/blautic/pikkuAcademy/raw/master/images/full.gif" width="240" center></div>
+
+Esta aplicación utiliza la aplicación base explicada anteriormente para gestionar la conexión con el dispositivo. Consulta este apartado si no te queda claro como realizar esta funcionalidad.
+
+EXPLICAR DE ARRIBA A ABAJO DE LA PANTALLA EL USO DE LA LIBRERÍA COMBINADA CON LA PROGRAMACIÓN DE LOS RECURSOS GRÁFICOS UTILIZADOS
+
+Una primera funcionalidad es el uso de los botones inalámbricos que proporciona el Pikku. Podemos pulsar los botones y recibir la información asociada: estado de pulsación del botón 1 y del botón 2 y el tiempo de pulsación en milisegundos. El tiempo de pulsación te permite distinguir entre pulsaciones cortas y largas.
+
+Puedes usar estos botones para convertir el pikku en un control remoto de tus aplicaciones. Por ejemplo, un control de turnos, unos marcadores deportivos remotos, como botón de emergencia, disparar acciones remotas en el móvil, ... 
+
+El siguiente código te permite leer el estado de los botones y obtener la duración en segundos actualizando al instante el texto asociado a cada botón en nuestra interfaz.
+
+```java
+pikkuAcademy.readButtons((nButton, pressedButton, durationMilliseconds) -> {
+    String durationSeconds = String.format("%.1f''", durationMilliseconds / 1000.0);
+    //Button 1 or 2
+    if (nButton == 1) {
+        binding.button1Time.setText(durationSeconds);
+    } else {
+        binding.button2Time.setText(durationSeconds);
+    }
+
+});
+```
+
+
+- Encender o apagar motor
+
+
+```java
+binding.switchVibration.setOnCheckedChangeListener((buttonView, isChecked) -> {
+    if (isChecked) {
+        pikkuAcademy.startEngine();
+    } else {
+        pikkuAcademy.stopEngine();
+    }
+});
+```
+
+
+- Encender o apagar led
+
+```java
+binding.radioGroupLed.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+    @Override
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        switch (checkedId) {
+            case R.id.led_off:
+                pikkuAcademy.turnOffLed();
+                break;
+            case R.id.led_on:
+                pikkuAcademy.turnOnLed();
+                break;
+            case R.id.led_flashing:
+                pikkuAcademy.flashingLed();
+                break;
+        }
+    }
+});
+```
+
+- RSSI para control de la distancia
+
 
 - Obtenemos datos del accelerometro de los ejes x , y, z y los angulos xy, zy, xz
 
@@ -105,54 +170,7 @@ pikkuAcademy.readGyroscope(new GyroscopeCallback() {
 ```
 
 
-- Encender o apagar motor
 
-
-```java
-binding.switchVibration.setOnCheckedChangeListener((buttonView, isChecked) -> {
-    if (isChecked) {
-        pikkuAcademy.startEngine();
-    } else {
-        pikkuAcademy.stopEngine();
-    }
-});
-```
-
-- Encender o apagar led
-
-```java
-binding.radioGroupLed.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-    @Override
-    public void onCheckedChanged(RadioGroup group, int checkedId) {
-        switch (checkedId) {
-            case R.id.led_off:
-                pikkuAcademy.turnOffLed();
-                break;
-            case R.id.led_on:
-                pikkuAcademy.turnOnLed();
-                break;
-            case R.id.led_flashing:
-                pikkuAcademy.flashingLed();
-                break;
-        }
-    }
-});
-```
-
-- Estado de los botones
-
-```java
-pikkuAcademy.readButtons((nButton, pressedButton, durationMilliseconds) -> {
-    String durationSeconds = String.format("%.1f''", durationMilliseconds / 1000.0);
-    //Button 1 or 2
-    if (nButton == 1) {
-        binding.button1Time.setText(durationSeconds);
-    } else {
-        binding.button2Time.setText(durationSeconds);
-    }
-
-});
-```
 
 
 # Activity 
