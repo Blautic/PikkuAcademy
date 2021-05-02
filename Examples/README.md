@@ -6,12 +6,14 @@ Lee detenidamente sus características ya que durante su lectura te proponemos m
 
 ## Aplicación Base
 
-Esta aplicación consta del código necesario mínimo para el uso del sistema: batería, conexión y ajustes. Usa este código para no tener que empezar desde cero.  [Ver código](https://github.com/blautic/pikkuAcademy/tree/master/Examples/pikkuAcademyBase/)
+Esta aplicación consta del código necesario mínimo para el uso del sistema: descubrimiento del pikku, gestión de la conexión y lectura de batería. Usa este código para no tener que empezar desde cero.  [Ver código](https://github.com/blautic/pikkuAcademy/tree/master/Examples/pikkuAcademyBase/)
 
 <div style="text-align:center"><img src="https://github.com/blautic/pikkuAcademy/raw/master/images/base.png" width="240"></div>
 
 
-- Detectamos dispositivos que mantengan presionado el botón 1 y lo guardamos en la configuración del la Liberia 
+Tal y como explicábamos en la documentación previa, en la librería existen métodos que te permiten descubrir aquellos PikkuAcademy que se encuentran cerca y que queremos conectar. Es nuestro primer objetivo para poder usar la aplicación.
+
+El siguiente permite metodo detectar el dispositivo Pikku cercano que mantenga presionado el botón 1 y guardar en la configuración de la librería su dirección MAC para las siguientes conexiones: 
 
 ```java
 pikkuAcademy.scan(true, scanInfo -> {
@@ -20,8 +22,8 @@ pikkuAcademy.scan(true, scanInfo -> {
     });
 }); 
 ```
+Una vez ya tenemos el dispositivo seleccionado debemos establecer conexión. En la aplicación debes pulsar el icono de conexión y esperar que se produzca la conexión. El icono cambia de color en ese momento y el código implementa la funcionalidad de lectura del estado de los recursos hardware disponibles.
 
-- Despues de establecer la conexión solicitamos el rssi y el estado actual de la batería, led, motor, etc
 
 ```java 
 pikkuAcademy.connect(state -> {
@@ -37,6 +39,7 @@ pikkuAcademy.connect(state -> {
     }
 });
 ```
+Despues de establecer la conexión solicitamos el rssi y el estado actual de la batería, del led, del motor,...
 
 ```java
 private void readValues() {
@@ -49,6 +52,11 @@ private void readValues() {
       updateBatteryLevel(statusDevice.battery);
     });
 }
+
+```
+Según vamos recibiendo la información del dispositivo debemos actualizar nuestra interfaz para informar al usuario de los datos recibidos. En este caso vemos la actualización del icono de la batería en función del nivel restante. 
+
+```java
 private void updateBatteryIU(int value) {
     binding.battery.setImageResource(
             value > 75 ? R.drawable.ic_battery_3 :
@@ -58,6 +66,7 @@ private void updateBatteryIU(int value) {
 }
 ```
 
+Con esta aplicación has aprendido lo mínimo que se necesita para empezar a interactuar con el dispositivo Pikku. Fácil, ¿no?. Si sigues explorando en la documentación encontrarás otros ejemplos para acceder a todos los recursos hardware y que usan los datos para construir aplicaciones reales y utiles. Tan pronto te familiarices con el código empezarás a querer desarrollar tus propias ideas. 
 
 
 # Full
