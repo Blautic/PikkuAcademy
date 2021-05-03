@@ -348,8 +348,6 @@ public void setDataAngles(float xy, float zy, float xz) {
 
 
 
-BOTÓN DE EMERGENCIA...CÓMO FUNCIONA, CÓMO SE HA PROGRAMADO... 
-
 - Botón de Emergencia
 
 ![](images/activity1.png)
@@ -412,19 +410,7 @@ Utilizando los ángulos del aceleramiento podemos ver la inclinación del dispos
 
 ![](images/angles.png)
 
-La función atan2 (*y*, *x*) devuelve el ángulo *θ* entre la [recta](https://es.wikipedia.org/wiki/Recta) que une el origen de coordenadas con un punto (*x*, *y*) y el eje positivo *x*, limitado a -π, π.
 
-```java
-public float getAngles(float a, float b) {
-    float angle = 0;
-    if (Math.abs(a) < 0.1) angle = 0;
-    else {
-        double rad3 = (float) (Math.atan2(a, b));
-        angle = (float) Math.toDegrees(rad3);
-    }
-    return angle;
-}
-```
 
 ```java
 pikkuAcademy.readAccelerometer(new AccelerometerCallback() {
