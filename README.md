@@ -1,4 +1,4 @@
-![](images/portada-es.png)
+<div style="text-align:center"><img src="images/portada-es.png"/></div>
 
 # Introducción
 
