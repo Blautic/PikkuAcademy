@@ -1,4 +1,4 @@
-![](images/portada-es.png)
+![](images/portada-en.png)
 
 # Introducción
 

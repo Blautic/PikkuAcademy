@@ -1,4 +1,4 @@
 * [Introducción](/README.md)
-* [Libreria](/libreria.md)
-* [Ejemplos](/Examples/README.md)
+* [Libreria](/library.md)
+* [Ejemplos](/examples.md)
 * [Manual](/manual.md)

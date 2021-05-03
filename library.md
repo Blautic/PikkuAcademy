@@ -58,7 +58,7 @@ En los siguientes puntos te contamos como usar la variada funcionalidad de la li
 Una de las primeras necesidades que vas a tener en cualquier aplicación es descubrir los dispositivos Pikku que tienes a tu alrededor e identificar el que quieras usar para conectar.
 
 Para ello tienes dos posibilidades de escan:
-1. Identificar dispositivo pikku que mantenga presionado el botón 1, pasamos el primer parametro true par indicar que solo detecte dispositivos pikku con el boton 1 presionado 
+1. Identificar dispositivo pikku que mantenga presionado el botón 1, pasamos el primer parametro true para indicar que solo detecte dispositivos pikku con el botón 1 presionado 
 
    ```java
    pikkuAcademy.scan(true, new ScanCallback() {
@@ -82,7 +82,7 @@ Para ello tienes dos posibilidades de escan:
 
 
 
-ScanInfo tiene información relevante del dispositivo como: dirección mac, nombre, versión de firmware, rssi, nivel de batería, estado del boton1 y 2, grupo, code y number. 
+ScanInfo tiene información relevante del dispositivo como: dirección mac, nombre, versión de firmware, rssi, nivel de batería, estado del botón 1 y 2, grupo, code y number. 
 
 Puedes leer todos estos parámetros del dispositivo sin necesidad de conectarte por lo que podrías diseñar aplicaciones de qué personas o qué objetos están a tu alrededor en cada momento simplemente gestionando la información proporcionada.
 
