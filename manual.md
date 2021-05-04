@@ -1,4 +1,9 @@
+<div style="text-align:center"><img src="images/pikku-kit.png" alt="pikku-kit"  /></div>
+
+
+
 # MANUAL
+
 Los dispositivos Pikku están provistos de sensores de acelerometría y giroscopio, cada uno de ellos en sus tres ejes, disponen de dos Leds, un Motor y dos botones como se muestran en la figura:  
 
 ![](images/pikku1.png)
