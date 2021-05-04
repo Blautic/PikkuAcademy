@@ -248,9 +248,7 @@ Los valores de la aceleración en g’s (1g equivale a 9,8m/sg2) del eje **x, y,
 
 ![](images/pikku_ejes.png)
 
-Si el dispositivo inclina su plano XY respecto a la vertical, el ángulo α aumenta (situación
-inicial 0 grados). Lo mismo ocurre si inclina su plano ZY respecto la vertical, en este caso
-se incrementa en ángulo β desde una situación inicial de 0 grados.
+Si el dispositivo inclina su plano XY respecto a la vertical, el ángulo α aumenta (situación inicial 0 grados). Lo mismo ocurre si inclina su plano ZY respecto la vertical, en este caso se incrementa en ángulo β desde una situación inicial de 0 grados.
 
 Ejemplo inclinación del plano XY
 
@@ -293,7 +291,7 @@ Aplicación con guía paso a paso para control de pasos, distancia recorrida, pa
 
 Para detectar las actividad como caminar, el resultado no puede depender de si el usuario sostiene el dispositivo en posición vertical u horizontal, por lo que los valores individuales de X, Y y Z no servirán. En su lugar, tendrá que mirar la longitud del vector, es decir, sqrt (x² + y² + z²) que es independiente de la orientación del dispositivo.
 
-Utilizando la [media móvil ponderada](https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average)  de la energía puede contar los pasos con solo buscar el máximo y el mínimo de sqrt (x² + y² + z²)   cuando esta supere la media ponderada. Para detectar los saltos utilizamos la misma lógica de los pasos, pero en este caso aumentamos el umbral que tiene que alcanzar para considerarlo un salto.
+Utilizando la [media móvil ponderada](https://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average)  de la energía puede contar los pasos con solo buscar el máximo y el mínimo de sqrt (x² + y² + z²) cuando esta supere la media ponderada. Para detectar los saltos utilizamos la misma lógica de los pasos, pero en este caso aumentamos el umbral que tiene que alcanzar para considerarlo un salto.
 
 
 
@@ -328,9 +326,9 @@ public void stepDetect(float x, float y, float z) {
 
 
 
-Declaramos **lastTimeMovementDetected** para guardar  el tiempo del ultimo paso detectado y descartamos los pasos en los siguientes 300 mili segundos, así evitamos que cuente el mismo paso mas de una vez. También declaramos **timeBeforeDeclaringStationary** que es el tiempo mínimo antes  empezar a detectar que la persona esta de pie sin ningún movimiento.
+Declaramos **lastTimeMovementDetected** para guardar  el tiempo del ultimo paso detectado y descartamos los pasos en los siguientes 300 mili segundos, así evitamos que cuente el mismo paso mas de una vez. También declaramos **timeBeforeDeclaringStationary** que es el tiempo mínimo antes de empezar a detectar que la persona esta de pie sin ningún movimiento.
 
-Para saber si la persona esta sentada detectamos los ángulos del acelerometro, cuando el plano xy o zy son mayores que 30 indicamos que la persona esta en reposo
+Para saber si la persona esta sentada detectamos los ángulos del acelerometro, cuando el plano xy o zy son mayores que 30 indicamos que la persona esta en reposo.
 
 ```java
 public void setDataAngles(float xy, float zy, float xz) {
