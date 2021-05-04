@@ -366,7 +366,7 @@ pikkuAcademy.readButtons(new ButtonsCallback() {
 });
 ```
 
-Obtenemos el estado de los botones, establecemos un tiempo mínimo de pulsación del los botones en este caso hemos marcado 3 segundos, comprobamos que el Switch este habilitado, si estas dos condiciones se cumplen realizamos la llamada o la vibración del teléfono móvil par informar la emergencia.
+Obtenemos el estado de los botones, establecemos un tiempo mínimo de pulsación del los botones en este caso hemos marcado 3 segundos, comprobamos que el Switch este habilitado, si estas dos condiciones se cumplen realizamos la llamada o la vibración del teléfono móvil para informar la emergencia.
 
 
 
