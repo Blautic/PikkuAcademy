@@ -14,7 +14,7 @@ Tal y como explicábamos en la documentación previa, en la librería existen m�
 
 En la aplicación de ejemplo tenemos disponible los siguientes iconos para representar el estado de la batería y la conexión
 
-![](images/ic_battery_0.svg ':size=50') ![](images/ic_battery_1.svg ':size=50') ![](images/ic_battery_2.svg ':size=50') ![](images/ic_battery_3.svg ':size=50')  ![](images/ic_disconnect.svg ':size=50')  ![](images/ic_connect.svg ':size=50') 
+<img src="images/ic_battery_0.svg" width="50" /> <img src="images/ic_battery_1.svg" width="50" /> <img src="images/ic_battery_2.svg" width="50"/> <img src="images/ic_battery_3.svg" width="50"/>  <img src="images/ic_disconnect.svg" width="50" />  <img src="images/ic_connect.svg" width="50"/> 
 
 
 
@@ -188,7 +188,7 @@ binding.switchVibration.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
 - Encender o apagar led, en los recursos tenemos dos imagen para representar el led apagado o encendido, cambiamos la imagen dependiendo del estado del led .
 
-  ![](images/pikku_on.svg ':size=100') ![](images/pikku_off.svg ':size=86') 
+  <img src="images/pikku_on.svg" width="120"/> <img src="images/pikku_off.svg" width="100"/> 
 
 ```java
 binding.radioGroupLed.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
