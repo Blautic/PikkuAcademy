@@ -3,6 +3,10 @@ En este bloque de la documentación te presentamos código real que te va a ayud
 
 Lee detenidamente sus características ya que durante su lectura te proponemos mejoras y acceso a información adicional.
 
+## Aplicaciones de ejemplo
+
+Este repositorio incluye 4 aplicaciones de demostración que ilustra el uso de esta biblioteca.
+[Ver código](https://github.com/blautic/pikkuAcademy/tree/master/Examples/)
 
 ## Aplicación Base
 
