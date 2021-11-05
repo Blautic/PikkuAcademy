@@ -3,6 +3,10 @@ En este bloque de la documentación te presentamos código real que te va a ayud
 
 Lee detenidamente sus características ya que durante su lectura te proponemos mejoras y acceso a información adicional.
 
+## Aplicaciones de ejemplo
+
+Este repositorio incluye 4 aplicaciones de demostración que ilustra el uso de esta biblioteca.
+[Ver código](https://github.com/blautic/pikkuAcademy/tree/master/Examples/)
 
 ## Aplicación Base
 
@@ -99,7 +103,7 @@ Con la aplicación PikkuAcademyFull vas a ver cómo acceder y extraer todos los 
 
 <a href="https://play.google.com/store/apps/details?id=com.blautic.pikkuacademyfull"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="75"></a>
 
-El código de la aplicación visualiza el modo de utilizar la funcionalidad completa del dispositivo. Puedes extraer bloques ejemplo y probar su funcionamiento [Ver codigo](https://github.com/blautic/pikkuAcademy/tree/master/Examples/pikkuAcademyFull/)
+El código de la aplicación visualiza el modo de utilizar la funcionalidad completa del dispositivo. Puedes extraer bloques ejemplo y probar su funcionamiento [Ver código](https://github.com/blautic/pikkuAcademy/tree/master/Examples/pikkuAcademyFull/)
 
 Una de las primeras funciones que debes hacer para desarrollar aplicaciones es dominar el diseño de la interfaz de usuario. En este caso puedes utilizar la nuestra interfaz pero te proponemos que cambies los elementos, formatos y colores para adaptarlos a tus gustos y necesidades. 
 

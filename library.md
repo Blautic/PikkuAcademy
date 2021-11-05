@@ -1,6 +1,10 @@
 # Empezando con PikkuAcademy
 En los siguientes apartados vas a aprender a cómo interactuar con el dispositivo Pikku y extraer información de todos sus recursos hardware. Para ello, te ofrecemos una librería ya preparada que facilita el acceso al dispositivo y te proporciona todos los datos.
 
+## Aplicaciones de ejemplo
+
+Este repositorio incluye 4 aplicaciones de demostración que ilustra el uso de esta biblioteca.
+[Ver código](https://github.com/blautic/pikkuAcademy/tree/master/Examples/)
 
 ## Incorporación a tu proyecto
 
