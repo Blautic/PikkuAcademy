@@ -68,23 +68,22 @@ Para ello tienes dos posibilidades de escan:
    pikkuAcademy.scan(true, new ScanCallback() {
        @Override
        public void onScan(ScanInfo scanInfo) {
-          pikkuAcademy.saveDevice(scanInfo) // guardar dispositivo para futuras conexiones 
+          // guardar dispositivo para futuras conexiones 
+          pikkuAcademy.saveDevice(scanInfo) 
        }
    });
    ```
-
+   
 2. Filtrar y mostrar todos los dispositivos pikku disponibles con su información asociada, pasamos el primer parametro false para indicar que detecte todos los dispositivos pikku disponibles
 
-   ```java
-   pikkuAcademy.scan(false, new ScanCallback() {
+    ```java
+    pikkuAcademy.scan(false, new ScanCallback() {
        @Override
        public void onScan(ScanInfo scanInfo) {
-   	 
+    
        }
-   });
-   ```
-
-
+    });
+    ```
 
 ScanInfo tiene información relevante del dispositivo como: dirección mac, nombre, versión de firmware, rssi, nivel de batería, estado del botón 1 y 2, grupo, code y number. 
 
@@ -92,7 +91,7 @@ Puedes leer todos estos parámetros del dispositivo sin necesidad de conectarte 
 
 
 
-### Conectar
+## Conectar
 
 Si queremos usar los recursos de los sensores de forma específica de un Pikku tenemos que conectarnos del siguiente modo. La librería te devolverá la información en el código del Callback que le proporcionemos.
 
@@ -103,30 +102,32 @@ pikkuAcademy.connect("00:00:00:00:00", new ConnectionCallback() {
 	@Override
 	public void onConnect(ConnectionState state) {
 		if(state == ConnectionState.CONNECTED){
-           // habilitar sensores
+       // habilitar sensores
 		}
 	}
 });
 ```
+
+
 Para conectarse al dispositivo guardado en la configuración de la librería
 
-```java 
+```java
 pikkuAcademy.connect(new ConnectionCallback() {
-	@Override
-	public void onConnect(ConnectionState state) {
-		if(state == ConnectionState.CONNECTED){
+    @Override
+    public void onConnect(ConnectionState state) {
+        if(state == ConnectionState.CONNECTED){
            // habilitar sensores
-		}
+        }
 
-	}
+    }
 });
 ```
 
-ConnectionState tiene tres estados **CONNECTED**, **DISCONNECTED**, **FAILED**. Habilitar los sensores a partir del estado CONNECTED.
+ConnectionState tiene tres estados CONNECTED, DISCONNECTED, FAILED. Habilitar los sensores a partir del estado CONNECTED.
 
 
 
-# Funcionalidad
+## Funcionalidad
 
 En el siguiente apartado se detallan cómo hacer uso de la funcionalidad del dispositivo una vez conectados tal y como se describe en el punto anterior.
 
@@ -152,12 +153,10 @@ Su petición devuelve un StatusDevice que muestra información del dispositivo c
 pikkuAcademy.readStatusDevice(new StatusDeviceCallback() {
     @Override
     public void onReadSuccess(StatusDevice statusDevice) {
-        Log.d("status:" , statusDevice.toString());
+       Log.d("status:" , statusDevice.toString());
     }
 });
 ```
-
-
 
 
 ### Acelerómetro
@@ -170,18 +169,17 @@ pikkuAcademy.enableReportSensors(true);
 
 Obetener datos del acelerómetro en sus 3 ejes
 
-```java 
+```java
 pikkuAcademy.readAccelerometer(new AccelerometerCallback() {
-	@Override
-	public void onReadSuccess(float x, float y, float z) {
-	
-	}
-	@Override
-	public void onReadAngles(float xy, float zy, float xz) {
-	
-	}
+    @Override
+    public void onReadSuccess(float x, float y, float z) {
+
+    }
+    @Override
+    public void onReadAngles(float xy, float zy, float xz) {
+
+    }
 });
-        
 ```
 
 onReadSuccess:  Valor de la aceleración en g’s (1g equivale a 9,8m/sg2) del eje **x, y, z** 
@@ -198,8 +196,10 @@ La escala por defecto es 4g, puedes cambiar la configuración por defecto al ini
 
 Para cambiar la escala por defecto:
 
-```java 
+```java
+
 pikkuAcademy.changeDefaultAccelerometerScale(AccScale.ACC_SCALE_2G);
+
 ```
 
 Ideas: puedes usar esta información para ofrecer al usuario de tu aplicación funcionalidad interesante:
@@ -222,15 +222,16 @@ Para habilitar o deshabilitar la transmisión de los sensores
 
 ```java
 pikkuAcademy.enableReportSensors(true);
+
 ```
 
 Activar el accelerometro y obtener datos del gyroscopio en su 3 ejes:
 
-```java 
+```java
 pikkuAcademy.readGyroscope(new GyroscopeCallback() {
-	@Override
-	public void onReadSuccess(float x, float y, float z) {
-	}
+    @Override
+    public void onReadSuccess(float x, float y, float z) {
+    }
 });
 ```
 
@@ -245,7 +246,7 @@ La escala por defecto es 1000dps, para cambiar la escala al iniciar el Gyroscopi
 Cambiar la escala por defecto:
 
 ```java 
-pikkuAcademy.changeDefaultGyroscopeScale(GyrScale.GYR_SCALE_500);
+ pikkuAcademy.changeDefaultGyroscopeScale(GyrScale.GYR_SCALE_500);
 ```
 
 Ideas: puedes usar esta información para ofrecer al usuario de tu aplicación funcionalidad interesante.
@@ -279,11 +280,11 @@ Obtener el estado de los botones:
 
 
 
-```
+```java
 pikkuAcademy.readButtons(new ButtonsCallback() {
     @Override
     public void onReadSuccess(int nButton, boolean pressed, int duration) {
-        
+
     }
 });
 ```
@@ -311,12 +312,14 @@ Ideas: puedes usar esta información para ofrecer al usuario de tu aplicación f
 El uso del motor te puede permitir avisar al usuario en diferentes escenarios de la aplicación: empiece o acabe una tarea, notificación de recepción de llamada, qué dispositivo usar, ... hay que tener presente su alto consumo de batería y usarlo adecuadamente.
 
 Encender Motor:
+
 ```java
-pikkuAcademy.startEngine();
+ pikkuAcademy.startEngine();
 ```
 Apagar Motor:
+
 ```java
-pikkuAcademy.stopEngine();
+ pikkuAcademy.stopEngine();
 ```
 
 ### Led
@@ -324,10 +327,12 @@ pikkuAcademy.stopEngine();
 El led se puede controlar de las siguientes tres formas:
 
 Encender Led:
+
 ```java
 pikkuAcademy.turnOnLed()
 ```
 Apagar Led:
+
 ```java
 pikkuAcademy.turnOffLed();
 ```
@@ -335,7 +340,6 @@ Parpadeo: genera un parpadeo constante con un periodo de 2 segundos
 
 ```java
 pikkuAcademy.flashingLed();
-
 ```
 
 Puedes usar el led para notificar silenciosamente la llegada de información al teléfono, el estado de conexión, el inicio de acciones, el final de un temporizador, ...
