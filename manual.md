@@ -1,4 +1,5 @@
-<div style="text-align:center"><img src="images/pikku-kit.png" alt="pikku-kit"  /></div>
+<div style="text-align:center"><img src="images/pikku-kit.jpg" alt="pikku-kit" width="600" /></div>
+
 
 
 
@@ -6,7 +7,7 @@
 
 Los dispositivos Pikku están provistos de sensores de acelerometría y giroscopio, cada uno de ellos en sus tres ejes, disponen de dos Leds, un Motor y dos botones como se muestran en la figura:  
 
-![](images/pikku1.png)
+<img src="images/pikku1.jpg" alt="pikku-kit" width="600"/>
 
 
 Los 3 ejes tienen la siguiente orientación y signos respecto a la envolvente:

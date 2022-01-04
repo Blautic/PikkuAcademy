@@ -126,7 +126,7 @@ ConnectionState tiene tres estados **CONNECTED**, **DISCONNECTED**, **FAILED**. 
 
 
 
-# Funcionalidad
+## Funcionalidad
 
 En el siguiente apartado se detallan cómo hacer uso de la funcionalidad del dispositivo una vez conectados tal y como se describe en el punto anterior.
 
