@@ -1,8 +1,9 @@
-# MANUAL
+# GUÍA DE USO DE LOS DISPOSITIVOS
+
 
 <div style="text-align:center"><img src="images/pikku-kit.jpg" alt="pikku-kit" width="600" /></div>
 
-## INTRODUCCIÓN
+#### INTRODUCCIÓN
 
 Los Pikku son dispositivos electrónicos inalámbricos que contienen las siguientes características técnicas:
 
