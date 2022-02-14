@@ -471,3 +471,85 @@ private void checkCollision() {
 
 }
 ```
+
+
+
+# AI
+
+<a href="https://play.google.com/store/apps/details?id=com.blautic.pikkuacademyai"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="75" ></a>
+
+Este proyecto de ejemplo se compone de una vista donde seleccionaremos nuestro modelo de inteligencia artificial (cada uno entrenado para reconocer distintos movimientos).
+Una vez hayamos conectado nuestro dispositivo Pikku y hayamos seleccionado el modelo que queremos podemos empezar a tratar la información que nos genera Pikku para aplicar Inteligencia Artificial.
+
+
+#### Aplicar Inteligencia Artificial a tu proyecto PikkuAcademy
+
+Lo primero que tenemos que hacer es crear un **Buffer** que contendrá todos los datos leidos por el acelerómetro y el giroscopio.
+    
+```java
+    pikkuAcademy.readAccelerometer(new AccelerometerCallback() {
+            @Override
+            public void onReadSuccess(float x, float y, float z) {
+                buffer.queueEnqueue(x/4);
+                buffer.queueEnqueue(y/4);
+                buffer.queueEnqueue(z/4);
+            }
+            ...
+    };
+```
+Metémos en el buffer los datos del acelerómetor. (Dividimos entre 4 los datos para normalizarlos)
+        
+```java
+       pikkuAcademy.readGyroscope(new GyroscopeCallback() {
+            @Override
+            public void onReadSuccess(float x, float y, float z) {
+                buffer.queueEnqueue(x/1000);
+                buffer.queueEnqueue(y/1000);
+                buffer.queueEnqueue(z/1000);
+                cont++;
+                if(cont == 10){
+                    mutableLiveData.setValue(buffer);
+                    cont = 0;
+                }
+            }
+        });
+```
+Repetimos el proceso con el giroscopio. (Normalizamos los datos del giroscopio dividiendo entre 1000)
+
+#### Realizar la Inferencia de los datos
+
+Una vez hayamos metido todos los datos en el buffer procesamos toda la información para realizar la inferencia
+    
+```java
+        selectedItemViewModel.readValues().observe(getViewLifecycleOwner(), arrayQueue -> {
+            selectedItemViewModel.setInference(getArguments().getString("Data"), arrayQueue.getQueue());
+        });
+```
+Mandamos los datos al servidor donde se realizará la inferencia para recuperar los resultados mas adelante.
+
+```java
+        selectedItemViewModel.getResultInference().observe(getViewLifecycleOwner(), floats -> {
+            motionDetector.loadData(floats);
+            onUpdate(floats.get(0)*100, floats.get(1)*100);
+        });
+
+```
+
+Una vez realizada la inferencia y obtenidos los resultados llamamos al método loadData que se encargará de gestionar la parte visual de mostrar los datos, comparando si el procentaje de acierto es mayor o igual a un umbral establecido (modificable a través de la interfaz).
+
+```java
+        if(motionListener != null){
+            if (output.get(0) >= umbral/100.0 && (System.currentTimeMillis() - start > 1000)){
+                movCount++;
+                start = System.currentTimeMillis();
+                if(motionListener != null){
+                    motionListener.onCorrect(movCount, output.get(0)*100);
+                }
+            }
+        }
+```
+
+
+
+
+
